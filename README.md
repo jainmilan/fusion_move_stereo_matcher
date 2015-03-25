@@ -6,3 +6,13 @@ We updated the code with the implementation of fusion move algorithm for stereo 
 1. imageLib: Library which works on image files and remains untouched for current implementation.
 2. MRF: Library to implement markov random field and includes faster implementations of the global optimization methods. Both QPBO algorithm and fusion move algorithm was implemented in this library. Files required to be updated are: Makefile(to include QPBO code), GCOptimization.cpp, GCOptimization.h(to implement fusion move and QPBO graph cut)
 3. mrfstereo: Library to use MRF library for stereo matcher problem. Includes various parameters which can be used to tweak settings for running the algorithm. mrfstereo.cpp need to be updated to include option to execute fusion move algorithm.
+
+To execute the code:
+1. cd imageLib
+2. make
+3. cd ../MRF
+4. make
+5. cd ../mrfstereo
+6. make
+7. ./mrfstereo ./tsukuba/scene1.row3.col1.ppm ./tsukuba/scene1.row3.col5.ppm ./tsukuba/tsukuba.png
+
